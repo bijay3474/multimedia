@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="userForm">
+        <div class="inputs">
+
+
+            <label for="Name 1">Name 1 :</label>
+            <input type="text" name="Name1" id="Name" required>
+            <br>
+        </div>
+        <br>
+        <button class="add">+ Add</button>
+        <br><br>
+        <button type="submit">Submit</button>
+        <br><br>
+        <div style="color:red"></div>
+    </form>
+
+    <script>
+        const error=document.querySelector("div")
+        const button=document.querySelector(".add")
+        const AddedInput=document.querySelector(".inputs")
+        let i=2;
+        button.addEventListener("click",()=>{
+            const label=document.createElement("label")
+                label.innerHTML=`Name ${i} : `
+                i++
+            
+
+            const Br=document.createElement("br")
+
+
+            const input=document.createElement("input")
+            input.type="text"
+            input.name="Name1"
+            input.required=true
+            
+
+
+            AddedInput.appendChild(label)
+            AddedInput.appendChild(input)
+            AddedInput.appendChild(Br)
+            AddedInput.appendChild(Br)
+
+            
+        })
+
+
+
+        const docs=document.forms.userForm.addEventListener("submit",(e)=>{
+            e.preventDefault()
+            
+            console.log("Form has been submitted")
+        })
+        
+        
+    </script>
+</body>
+</html>
